@@ -18,7 +18,9 @@ if [$FOUND_KEY == ""]; then
     exit
     fi
 
-read -p  "Enter a password: " KEY
+echo "Enter a password"
+
+read -p "Enter password" KEY
 
 if [$KEY != $FOUND_KEY or $FOUND_KEY == "PASS"]; then 
     echo "wrong key"
