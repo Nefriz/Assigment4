@@ -25,14 +25,17 @@ echo "Hello World!" > 1.txt
 echo "Hello World!" > 2.txt
 cd -
 
-SCRIPT_DIR="$USER_HOME/Assigment4"
-cp "$SCRIPT_DIR/authServer.sh" /usr/bin/
-cp "$SCRIPT_DIR/credentials.txt" /etc/authServer/
-cp "$SCRIPT_DIR/authServer.service" /etc/systemd/system/
-
+sudo mkdir -p /etc/authServer
+sudo cp /home/ubuntu/Assigment4/authServer.sh /usr/bin/
+sudo cp /home/ubuntu/Assigment4/credentials.txt /etc/authServer/
+sudo cp /home/ubuntu/Assigment4/authServer.service /etc/systemd/system/
 sudo chmod +x /usr/bin/authServer.sh
 sudo chmod 600 /etc/authServer/credentials.txt
 sudo chown root:root /etc/authServer/credentials.txt
+sudo systemctl daemon-reload
+sudo systemctl enable authServer.service
+sudo systemctl restart authServer.service
+sudo systemctl status authServer.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable authServer.service
