@@ -1,0 +1,9 @@
+[Unit]
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/socat TCP4-LISTEN:7777,fork,pk8nfo system:/usr/bin/authServer.sh
+Restart=always
+RestartSec=1
