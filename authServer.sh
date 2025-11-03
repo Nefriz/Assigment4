@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CLIENT_IP=$SOCAT_PEERADDR
 
 iptables -D INPUT -s $CLIENT_IP -p tcp --dport 21 -j ACCEPT

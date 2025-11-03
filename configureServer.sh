@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt update
 sudo apt install socat vsftpd iptables  -y
 sudo apt install -y iptables-persistent
