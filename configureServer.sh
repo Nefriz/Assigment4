@@ -25,8 +25,7 @@ echo "Hello World!" > 1.txt
 echo "Hello World!" > 2.txt
 cd -
 
-SCRIPT_DIR=$(dirname "$(realpath "$0")")
-
+SCRIPT_DIR="$USER_HOME/Assigment4"
 cp "$SCRIPT_DIR/authServer.sh" /usr/bin/
 cp "$SCRIPT_DIR/credentials.txt" /etc/authServer/
 cp "$SCRIPT_DIR/authServer.service" /etc/systemd/system/
